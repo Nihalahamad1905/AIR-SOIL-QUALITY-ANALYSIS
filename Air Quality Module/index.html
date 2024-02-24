@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Air Quality Index Module</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/slick.css"/>
+
+        <link href="css/tooplate-little-fashion.css" rel="stylesheet">
+<!--
+
+Tooplate 2127 Little Fashion
+
+https://www.tooplate.com/view/2127-little-fashion
+
+-->
+
+
+
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+<!-- MDB -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+<script src="color.js"></script>
+<style>
+    form {
+        max-width: 500px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #logoname {
+        font-family: 'Kaushan Script', cursive;
+    }
+
+    .parent {
+        display: grid;
+        place-items: center;
+    }
+
+    .center-block {
+        margin: auto;
+        display: block;
+    }
+</style>
+    </head>
+    
+    <body style="background-color: rgba(226, 226, 226, 0.733);  font-family: Bookman Old Style;">
+
+        <section class="preloader">
+            <div class="spinner">
+                <span class="sk-inner-circle"></span>
+            </div>
+        </section>
+    
+        <main>
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="index.html">
+                        <strong><span>AIR</span> QUALITY INDEX</strong>
+                    </a>
+
+                    <div class="d-lg-none">
+                        <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
+
+                        <a href="product-detail.html" class="bi-bag custom-icon"></a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Map/test.html">Check AQI</a>
+                            </li>
+
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="faq.html">FAQs</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+
+                       
+                    </div>
+                </div>
+            </nav>
+
+                <div class="slick-custom">
+                    <img src="assests/img/bg3.png" class="img-fluid" alt="bg_img" style="position: relative;">
+
+                    <div class="slick-bottom">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10 col-10">
+                                    <h1 class="slick-title">AIR QUALITY ANALYSIS USUNG API</h1>
+
+                                    <p class="lead text-white mt-lg-4 mb-lg-5">An air quality index (AQI) is an indicator developed by government agencies to communicate to the public how polluted the air currently is or how polluted it is forecast to become.<p>
+
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </section>
+
+            <section class="about section-padding">
+                <div class="container">
+                    <section class="bg-image container pt-5 pb-5 rounded-5 shadow-6-strong"
+                    style="background-image: url(assests/img/bg2.jpg); background-size: absolute; font-family: Bookman Old Style;"  id="search">
+                    <div class="text-center">
+                        <h2 class="pb-2 text-light opacity-85 fw-bold text-decoration-bold">AIR QUALITY INDEX BY LOCATION </h2>
+                    </div>
+                    <div class="parent">
+                        <p class="text-capitalize text-light">Please enter the city name in text field below.</p>
+                        <form class="input-group" >
+                            <input id="city" type="text" name="city" class="form-control me-3 rounded center-block" 
+                                placeholder="Enter the Location of your choice" required style="margin: auto; display: block; font-family: Bookman Old Style;" />
+                            <button type="button" id="check" class="btn btn-primary text-light rounded"
+                                onclick="myFun()">Check</button> 
+                                <button type="button" id="check" class="btn btn-primary text-light rounded" style="margin-left: 20px;" onclick="document.location='Map/test.html'">Map</button>
+                        </form>
+                    </div>
+                </section>
+
+<!--CARDS-->
+<section class="container mb-7" id="res" style="font-family: Bookman Old Style;">
+    <div class="text-center pb-lg-4 pt-lg-5 mt-3">
+        <img src="assests/svg/meter.svg" alt="meter" class="justify-content-center">
+        <h2 class="pb-1" >Your Current Air Quality Index Result!!</h2>
+        <p class="opacity-80">All the major air pollutants are displayed with their concentration levels and their
+            AQI value.</p>
+    </div>
+
+    <!-- outline cards -->
+
+        <section class="container parent d-flex pb-5" style="font-family: Bookman Old Style;">
+            <div class="card text-center border border-dark shadow-4 pt-1 pb-1 ps-4 pe-4 me-5 center-block">
+                <div class="card-body fw-bold">Overall Air Quality Index: <span class="fs-4" id="oaq"></span></div>
+            </div>
+            <div class="card text-center border border-dark shadow-4 pt-1 pb-1 ps-4 pe-4 center-block">
+                <div class="card-body fw-bold">Air Quality Category: <span class="fs-4" id="result"></span></div>
+            </div>
+        </section>
+
+
+
+
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center fw-semibold">Carbon Dioxide (CO2)</div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr class="table-active">
+                                <th scope="col">Concentration</th>
+                                <th scope="col">Aqi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="text-danger fs-6" id="cc"></th>
+                                <th class="text-success fs-6" id="ca"></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center fw-semibold">Nitrogen Dioxide (NO2)</div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr class="table-active">
+                                <th scope="col">Concentration</th>
+                                <th scope="col">Aqi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="text-danger fs-6" id="nc"> <span class="text-secondary"></span></th>
+                                <th class="text-success fs-6" id="na"></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center fw-semibold">Sulphur Dioxide (SO2)</div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr class="table-active">
+                                <th scope="col">Concentration</th>
+                                <th scope="col">Aqi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="text-danger fs-6" id="sc"> <span class="text-secondary"></span></th>
+                                <th class="text-success fs-6" id="sa"></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center fw-semibold">Ozone (O3)</div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr class="table-active">
+                                <th scope="col">Concentration</th>
+                                <th scope="col">Aqi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="text-danger fs-6" id="oc"> <span class="text-secondary"></span></th>
+                                <th class="text-success fs-6" id="oa"></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center fw-semibold">PM2.5</div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr class="table-active">
+                                <th scope="col">Concentration</th>
+                                <th scope="col">Aqi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="text-danger fs-6" id="pc"> <span class="text-secondary"></span></th>
+                                <th class="text-success fs-6" id="pa"></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center fw-semibold">PM10</div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr class="table-active">
+                                <th scope="col">Concentration</th>
+                                <th scope="col">Aqi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="text-danger fs-6" id="ppc"> <span class="text-secondary"></span></th>
+                                <th class="text-success fs-6" id="ppa"></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+                                            
+                                     
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="front-product">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-6 col-12">
+                            <img src="images/retail-shop-owner-mask-social-distancing-shopping.jpg" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="px-5 py-5 py-lg-0">
+                                
+                                <h2 class="mb-4"><span>AQI</span> Information</h2>
+
+                                <p class="lead mb-4">The Air Quality Index (AQI) is a measure of how polluted the air is, based on levels of several different types of pollutants, including ozone, particulate matter, nitrogen dioxide, and sulfur dioxide. The AQI is typically reported on a scale of 0 to 500, with an AQI of 0 indicating perfect air quality and an AQI of 500 indicating extremely hazardous air</p>
+
+                                <a href="https://www.unep.org/interactives/air-pollution-note/" class="custom-link">
+                                    Learn More
+                                    <i class="bi-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured-product section-padding">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-12 text-center">
+                            <h2 class="mb-5">EFFECT OF POLLUTED AIR </h2>
+                        </div>
+
+                        <div class="col-lg-4 col-12 mb-3">
+                            <div class="product-thumb">
+                                
+                                    <img src="images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" class="img-fluid product-image" alt="">
+                         
+
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12 mb-3">
+                            <div class="product-thumb">
+                               
+                                    <img src="images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" class="img-fluid product-image" alt="">
+                          
+
+                                
+                            </div>
+                        </div>
+                                <div class="col-lg-4 col-12 mb-3">
+                                    <div class="product-thumb">
+                                       
+                                            <img src="images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" class="img-fluid product-image" alt="">
+                                     
+        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+
+                        
+            </section>
+
+        </main>
+
+       
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/Headroom.js"></script>
+        <script src="js/jQuery.headroom.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/custom.js"></script>
+
+    </body>
+</html>
