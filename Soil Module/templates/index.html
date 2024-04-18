@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="The website which perform the soil quality analysis using image processing via Machine learning">
+        <meta name="author" content="Nihal_Shaikh, Sanika_Jadhav, Shradha_Thorat">
+        <meta content="soil,quality,analysis,ml,machine learning,dataset, soiltype, result,website,image,cnn,image processing" name="keywords">
+
+        <title>Soil Quality Index Module</title>
+
+        <!-- CSS FILES -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="../static/css/feature.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+<link href="../static/css/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="../static/css/slick.css"/>
+<link rel="stylesheet" type="text/css" href="../static/css/base.css">
+<link href="../static/css/tooplate-little-fashion.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+<script src="../static/js/color.js"></script>
+<style>
+    form {
+        max-width: 500px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #logoname {
+        font-family: 'Kaushan Script', cursive;
+    }
+
+    .parent {
+        display: grid;
+        place-items: center;
+    }
+
+    .center-block {
+        margin: auto;
+        display: block;
+    }
+</style>
+    </head>
+    
+    <body style="background-color: rgba(226, 226, 226, 0.733);  font-family: Bookman Old Style;">
+
+        <section class="preloader">
+            <div class="spinner">
+                <span class="sk-inner-circle"></span>
+            </div>
+        </section>
+    
+        <main>
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="index.html">
+                        <strong><span>SOIL</span> QUALITY INDEX</strong>
+                    </a>
+
+                    <div class="d-lg-none">
+                        <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
+
+                        <a href="product-detail.html" class="bi-bag custom-icon"></a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Check Type</a>
+                            </li>
+
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">FAQs</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+
+                       
+                    </div>
+                </div>
+            </nav>
+
+                <div class="slick-custom">
+                    <img src="../static/assests/img/soil.jpg" class="img-fluid" alt="bg_img" style="position: relative;">
+
+                    <div class="slick-bottom">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10 col-10">
+                                    <h1 class="slick-title">SOIL QUALITY ANALYSIS USING <br>MACHINE LEARNING</h1>
+
+                                    <p class="lead text-white mt-lg-4 mb-lg-5">Unlock the hidden potential of your land ! Our innovative soil analysis platform harnesses the power of machine learning to give you personalized insights into your soil health.<p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+<section class="about section-padding">
+                <div class="container">
+                    <section class="bg-image container pt-5 pb-5 rounded-5 shadow-6-strong"
+                    style="background-image: url(../static/assests/img/bg2.jpg); background-size: absolute; font-family: Bookman Old Style;"  id="search">
+                    <div class="text-center">
+                        <h2 class="pb-2 text-light opacity-85 fw-bold text-decoration-bold">SOIL QUALITY INDEX BY MACHINE LEARNING </h2>
+                    </div>
+                    <div class="parent">
+                        <p class="text-capitalize text-light">Please Upload the Image of soil into field below.</p>
+                        <form class="input-group" >
+                            <form action="{{ url_for('predict')}}" method="post">
+                            <input id="upload" accept="image/*" type="file" class="form-control me-3 rounded center-block" 
+                                placeholder="Upload the image of soil" required style="margin: auto; display: block; font-family: Bookman Old Style;" />
+
+                                <button type="button" id="check-btn" class="btn btn-primary text-light rounded">Check</button>
+                                </form>
+                        </form>
+                    </div>
+                </section>
+                
+            </section>
+
+          <div class="parent-container">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <h5 class="card-title">Predicted Soil Type: <span id="predictions_text"></span></h5>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>
+            
+        </section>
+
+<div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+              
+                <h1>Steps for the Soil Analysis</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="../static/assests/img/cam.jpg" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>STEP 1</h5>
+                            <p class="text-primary">Capture Image</p>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="../static/assests/img/net.jpg" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>STEP 2</h5>
+                            <p class="text-primary">Image Processing</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="../static/assests/img/step3.jpg" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>STEP 3</h5>
+                            <p class="text-primary">Analysis Completion</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="../static/assests/img/s4.jpg" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>STEP 4 </h5>
+                            <p class="text-primary">Result Analysis</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer>
+
+
+<div class="footer">&copy; 2024 <span> TY CSE Mini Project All rights reserved.</span></div>
+
+</footer>
+
+
+        <!-- JAVASCRIPT FILES -->
+
+        <script src="../static/js/jquery.min.js"></script>
+        <script src="../static/js/bootstrap.bundle.min.js"></script>
+        <script src="../static/js/Headroom.js"></script>
+        <script src="../static/js/jQuery.headroom.js"></script>
+        <script src="../static/js/slick.min.js"></script>
+        <script src="../static/js/custom.js"></script>
+
+
+
+ <script>
+        document.getElementById('check-btn').addEventListener('click', function() {
+            // Get the uploaded image file
+            var file = document.getElementById('upload').files[0];
+            
+            // Create a new FormData object and append the image file to it
+            var formData = new FormData();
+            formData.append('image', file);
+            
+            // Send the image file to the server for processing
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                // Update the soil type text with the predicted soil type
+                document.getElementById('predictions_text').textContent = data.predictions_text;
+            })
+            .catch(function(error) {
+                console.error(error);
+            });
+        });
+    </script>
+    
+</body>
+</html>
