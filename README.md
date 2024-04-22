@@ -39,5 +39,5 @@ for easy interpretation.
 6. Validation and Feedback : Validate the model predictions against ground truth measurements or expert assessments to verify accuracy and reliability.
 
 # Contributers 
-1. Sanika Minind Jadhav
+1. Sanika Milind Jadhav
 2. Thorar Shraddha Sudhakar
