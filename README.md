@@ -36,4 +36,8 @@ for easy interpretation.
 3. Model Training : Utilize supervised machine learning algorithms, such as convolutional neural networks (CNNs), to train a soil quality classification model. 
 4. Model Evaluation : Evaluate the trained model on the test set to assess its ability to predict soil quality attributes accurately. 
 5. Prediction and Deployment : Deploy the trained machine learning model to predict soil quality attributes for new, unseen soil samples. 
-6. Validation and Feedback : Validate the model predictions against ground truth measurements or expert assessments to verify accuracy and reliability. 
+6. Validation and Feedback : Validate the model predictions against ground truth measurements or expert assessments to verify accuracy and reliability.
+
+# Contributers 
+1. Sanika Minind Jadhav
+2. Thorar Shraddha Sudhakar
